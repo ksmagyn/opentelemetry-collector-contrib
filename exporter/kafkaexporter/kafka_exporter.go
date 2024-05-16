@@ -7,6 +7,9 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io"
+	"log"
+	"os"
 
 	"github.com/IBM/sarama"
 	"go.opentelemetry.io/collector/consumer/consumererror"
@@ -16,7 +19,7 @@ import (
 	"go.opentelemetry.io/collector/pdata/ptrace"
 	"go.uber.org/zap"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/internal/kafka"
+	"github.com/ksmagyn/opentelemetry-collector-contrib/internal/kafka"
 )
 
 var errUnrecognizedEncoding = fmt.Errorf("unrecognized encoding")
@@ -159,6 +162,7 @@ func newSaramaProducer(config Config) (sarama.SyncProducer, error) {
 	}
 	c.Producer.Compression = compression
 
+	sarama.DebugLogger = log.New(io.Writer(os.Stdout), "[Sarama] ", log.LstdFlags)
 	producer, err := sarama.NewSyncProducer(config.Brokers, c)
 	if err != nil {
 		return nil, err
