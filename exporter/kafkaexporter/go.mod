@@ -1,4 +1,4 @@
-module github.com/open-telemetry/opentelemetry-collector-contrib/exporter/kafkaexporter
+module github.com/ksmagyn/opentelemetry-collector-contrib/exporter/kafkaexporter
 
 go 1.20
 
@@ -7,8 +7,8 @@ require (
 	github.com/cenkalti/backoff/v4 v4.2.1
 	github.com/gogo/protobuf v1.3.2
 	github.com/jaegertracing/jaeger v1.53.0
-	github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.94.0
-	github.com/open-telemetry/opentelemetry-collector-contrib/internal/kafka v0.94.0
+	github.com/ksmagyn/opentelemetry-collector-contrib/internal/coreinternal v0.94.3
+	github.com/ksmagyn/opentelemetry-collector-contrib/internal/kafka v0.94.3
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchpersignal v0.94.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger v0.94.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/zipkin v0.94.0
@@ -91,9 +91,9 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal => ../../internal/coreinternal
+// replace github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal => ../../internal/coreinternal
 
-replace github.com/open-telemetry/opentelemetry-collector-contrib/internal/kafka => ../../internal/kafka
+// replace github.com/open-telemetry/opentelemetry-collector-contrib/internal/kafka => ../../internal/kafka
 
 replace github.com/open-telemetry/opentelemetry-collector-contrib/pkg/batchpersignal => ../../pkg/batchpersignal
 
