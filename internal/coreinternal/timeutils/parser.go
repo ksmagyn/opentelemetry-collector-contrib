@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	strptime "github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal/timeutils/internal/ctimefmt"
+	strptime "github.com/ksmagyn/opentelemetry-collector-contrib/internal/coreinternal/timeutils/internal/ctimefmt"
 )
 
 func StrptimeToGotime(layout string) (string, error) {
