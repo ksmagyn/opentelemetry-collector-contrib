@@ -163,6 +163,7 @@ func newSaramaProducer(config Config) (sarama.SyncProducer, error) {
 	c.Producer.Compression = compression
 
 	sarama.DebugLogger = log.New(io.Writer(os.Stdout), "[Sarama] ", log.LstdFlags)
+	sarama.Logger = log.New(io.Writer(os.Stdout), "[SaramaLogger] ", log.LstdFlags)
 	producer, err := sarama.NewSyncProducer(config.Brokers, c)
 	if err != nil {
 		return nil, err
